@@ -24,7 +24,7 @@ export default class ThermalPrinter extends Plugin {
 								.getLeavesOfType(PRINT_PREVIEW_TYPE)
 								.forEach((leaf) => {
 									if (leaf.view instanceof PrintPreview) {
-										leaf.view.setContent(
+										leaf.view.appendContent(
 											editor.getSelection(),
 											view.file?.parent.path || ""
 										);
@@ -77,9 +77,7 @@ class PrintPreview extends ItemView {
 		return "Thermal Printer Preview";
 	}
 
-	setContent(content: string, sourcePath: string) {
-		this.container.empty();
-
+	appendContent(content: string, sourcePath: string) {
 		const markdownRenderChild = new MarkdownRenderChild(this.container);
 		MarkdownRenderer.renderMarkdown(
 			content,
