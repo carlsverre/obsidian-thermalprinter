@@ -35,7 +35,13 @@ export default class ThermalPrinter extends Plugin {
 			})
 		);
 
-		await this.activateView();
+		this.addRibbonIcon(
+			"printer",
+			"Thermal Printer Preview Pane",
+			(evt: MouseEvent) => {
+				this.activateView();
+			}
+		);
 	}
 
 	async activateView() {
