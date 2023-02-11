@@ -1,8 +1,22 @@
 .thermalprinter-preview {
+	margin-top: 30px;
+	margin-bottom: 10px;
 	font-size: 24px;
+	background: white;
+	box-sizing: border-box;
 }
 
 .thermalprinter-preview * {
-	background: none;
-	color: black;
+	background: none !important;
+	color: black !important;
+	box-sizing: border-box;
+	mix-blend-mode: normal;
+}
+
+.thermalprinter-preview table {
+	width: 100%;
+	margin-bottom: 1em;
+}
+.thermalprinter-preview table th {
+	text-align: left;
 }
